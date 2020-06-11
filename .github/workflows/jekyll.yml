@@ -19,6 +19,6 @@ jobs:
       name: install surdge
       run: npm install -g surge 
       name: run surge
-      run: surge ./ simple_hello_world_file.surge.sh --token ${{secret.SURGE_TOKEN_1}}    
+      run: surge ./ simple_hello_world_file.surge.sh --token ${{secrets.SURGE_TOKEN_1}}    
       
   
