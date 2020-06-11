@@ -12,13 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: install NodeJS
+    - name: Install NodeJS
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
-      name: install surdge
+      name: Install surge
       run: npm install -g surge 
-      name: run surge
+      name: Run surge
       run: surge ./ simple_hello_world_file.surge.sh --token ${{secrets.SURGE_TOKEN_1}}    
       
   
