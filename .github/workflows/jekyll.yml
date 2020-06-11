@@ -1,0 +1,24 @@
+name: deploy
+
+on:
+  push:
+    branches: [ master ]
+  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install NodeJS
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: 12
+    - name: Install surge
+      run: npm install -g surge 
+    - name: Run surge
+      run: surge ./ simple_hello_world_file.surge.sh --token ${{secrets.SURGE_TOKEN_1}}    
+      
+  
